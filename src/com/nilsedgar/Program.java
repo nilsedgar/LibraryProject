@@ -1,8 +1,65 @@
 package com.nilsedgar;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Program {
+        ArrayList<Book> books = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
+        private String password = "password123";
 
+    public Program(){
+
+
+    }
+
+    public void showMenu(){
+        boolean active = true;
+        Scanner scanner = new Scanner(System.in);
+        int selection = scanner.nextInt();
+        System.out.println("Welcome to the Library");
+        System.out.println("1. Login as Admin");
+
+        while(active){
+            switch (selection){
+                case 1:
+                    loginAsAdmin();
+            }
+        }
+    }
+
+    private Boolean loginAsAdmin() {
+        Scanner scanner = new Scanner(System.in);
+        String pass = scanner.nextLine();
+        if(pass.equals(password)) {
+            return true;
+        }
+        else{
+            System.out.println("Incorrect password");
+            return false;
+        }
+    }
 
 }
+
+//        users.add(new Admin("Nils Jacobsen", true));
+//        users.add(new Admin("Karin Lennebo", true));
+//        users.add(new Customer("Hej Hejsson", false));
+//        users.add(new Customer("Adjö Adjösson", false));
+//        users.add(new Customer("Läget Lägetsson", false));
+//        users.add(new Customer("Låna Boksson", false));
+//
+//        FileUtility.saveObject("users.ser", users);
+
+//            books.add(new Book("Harry Potter", "JK Rowling", "Fantasy"));
+//            books.add(new Book("Lord Of The Rings", "J.R.R Tolkien", "Fantasy"));
+//            books.add(new Book("Moby Dick", "Herman Melville", "Drama"));
+//            books.add(new Book("Hamlet", "William Shakespeare", "Tragedy"));
+//            books.add(new Book("Huckleberry Finn", "Mark Twain", "Adventure"));
+//            books.add(new Book("Pride and Prejudice", "Jane Austen", "Periodical"));
+//            books.add(new Book("1984", "George Orwell", "Dystopia"));
+//            books.add(new Book("The Iliad", "Homer", "Epic"));
+//            books.add(new Book("To Kill a Mockingbird", "Harper Lee", "Gothic"));
+//
+//
+//            FileUtility.saveObject("books.ser", books);

@@ -1,6 +1,8 @@
 package com.nilsedgar;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private String name;
     private Boolean access;
@@ -8,5 +10,9 @@ public class User {
     public User(String name, Boolean access) {
         this.name = name;
         this.access = access;
+    }
+
+    public String getName(){
+        return name;
     }
 }
