@@ -1,7 +1,6 @@
 package com.nilsedgar;
 
 import java.io.Serializable;
-import java.util.Date;
 
 public class Book implements Serializable {
 
