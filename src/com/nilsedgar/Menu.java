@@ -55,7 +55,7 @@ public class Menu {
         String username = scanner.nextLine();
         System.out.println("Enter password:");
         String pass = scanner.nextLine();
-        
+
     }
 
     private void showAdminMenu() {

@@ -7,11 +7,13 @@ public class Book implements Serializable {
     private String title;
     private String author;
     private String genre;
+    private boolean isAvailable;
 
-    public Book(String title, String author, String genre) {
+    public Book(String title, String author, String genre, Boolean isAvailable) {
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.isAvailable = isAvailable;
     }
 
     public String getTitle() {

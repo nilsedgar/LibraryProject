@@ -13,6 +13,13 @@ public class Program {
 
         menu.showMainMenu();
 
+        users.add(new Admin("Nils Jacobsen"));
+        users.add(new Admin("Karin Lennebo"));
+        users.add(new Customer("Hej Hejsson"));
+        users.add(new Customer("Adjö Adjösson"));
+        users.add(new Customer("Läget Lägetsson"));
+        users.add(new Customer("Låna Boksson"));
+
     }
 
 
