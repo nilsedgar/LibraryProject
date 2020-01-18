@@ -1,18 +1,23 @@
 package com.nilsedgar;
 
+import javax.swing.*;
 import java.io.Serializable;
 
 public class User implements Serializable {
 
     private String name;
-    private Boolean access;
+    private String password;
 
-    public User(String name, Boolean access) {
+    public User(String name, String password) {
         this.name = name;
-        this.access = access;
+        this.password = password;
     }
 
     public String getName(){
         return name;
+    }
+
+    public String getPassword(){
+        return password;
     }
 }
