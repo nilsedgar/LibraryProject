@@ -16,6 +16,14 @@ public class Book implements Serializable {
         this.isAvailable = isAvailable;
     }
 
+    public boolean getIsAvailable(){
+        return isAvailable;
+    }
+
+    public void setIsAvailable(){
+        this.isAvailable = isAvailable;
+    }
+
     public String getTitle() {
         return title;
     }
