@@ -7,12 +7,12 @@ public class Program {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<User> users = new ArrayList<>();
-    Menu menu = new Menu();
 
     public Program() {
 
-        //menu.showMainMenu();
-        createUserList();
+        Menu menu = new Menu();
+        menu.showMainMenu();
+
 
 
     }

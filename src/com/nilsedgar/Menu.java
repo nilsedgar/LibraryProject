@@ -9,11 +9,11 @@ public class Menu {
 
     public void showMainMenu() {
         boolean active = true;
-        int selection = scanner.nextInt();
         System.out.println("Welcome to the Library");
         System.out.println("1. Login as Admin");
         System.out.println("2. Login as Customer");
         System.out.println("3. Exit");
+        int selection = scanner.nextInt();
 
         while (active) {
             switch (selection) {
@@ -28,7 +28,6 @@ public class Menu {
     }
 
     private void showCustomerMenu() {
-        int select = scanner.nextInt();
         System.out.println("1. Show list of all books");
         System.out.println("2. Show info on book");
         System.out.println("3. Borrow a book");
@@ -37,6 +36,7 @@ public class Menu {
         System.out.println("6. Show my borrowed books");
         System.out.println("7. Return books");
         System.out.println("8. Return to main menu");
+        int select = scanner.nextInt();
         switch (select) {
             case 1:
             case 2:
