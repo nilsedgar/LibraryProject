@@ -7,26 +7,30 @@ public class Program {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<User> users = new ArrayList<>();
+    Menu menu = new Menu();
 
     public Program() {
 
-    Menu menu = new Menu();
-        menu.showMainMenu();
+        //menu.showMainMenu();
+        createUserList();
 
 
     }
 
+public void createUserList() {
+    users.add(new Admin("Nils Jacobsen", "admin123"));
+    users.add(new Admin("Karin Lennebo", "admin123"));
+    users.add(new Customer("Hej Hejsson", "customer123"));
+    users.add(new Customer("Adjö Adjösson", "customer123"));
+    users.add(new Customer("Läget Lägetsson", "customer123"));
+    users.add(new Customer("Låna Boksson", "customer123"));
+
+    FileUtility.saveObject("users.ser", users);
+}
 
 }
 
-            /*        users.add(new Admin("Nils Jacobsen"));
-        users.add(new Admin("Karin Lennebo"));
-        users.add(new Customer("Hej Hejsson"));
-        users.add(new Customer("Adjö Adjösson"));
-        users.add(new Customer("Läget Lägetsson"));
-        users.add(new Customer("Låna Boksson"));
 
-        FileUtility.saveObject("users.ser", users);*/
 
 
 
