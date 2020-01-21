@@ -6,8 +6,9 @@ import java.util.Scanner;
 public class Menu {
 
     Scanner scanner = new Scanner(System.in);
+    Program program = new Program();
 
-    public void showMainMenu() {
+    public  void showMainMenu() {
         boolean active = true;
         System.out.println("Welcome to the Library");
         System.out.println("1. Login as Admin");
@@ -69,20 +70,26 @@ public class Menu {
     }
 
     private void showAdminMenu() {
-        int select = scanner.nextInt();
         System.out.println("1. Add new book");
         System.out.println("2. Add new customer");
         System.out.println("3. Show all users");
         System.out.println("4. Search for users");
         System.out.println("5. Return to main menu");
+        int select = scanner.nextInt();
         switch (select) {
             case 1:
+                program.addNewBook();
             case 2:
+                program.addNewCustomer();
             case 3:
+                program.showAllUsers();
             case 4:
+                program.searchForUserName();
             case 5:
                 showMainMenu();
         }
     }
+
+
 
 }
