@@ -20,34 +20,41 @@ public class Menu {
             switch (selection) {
                 case 1:
                     loginAsAdmin();
+                    break;
                 case 2:
                     showCustomerMenu();
+                    break;
                 case 3:
                     active = false;
+                    break;
             }
         }
     }
 
     private void showCustomerMenu() {
         System.out.println("1. Show list of all books");
-        System.out.println("2. Show info on book");
-        System.out.println("3. Borrow a book");
-        System.out.println("4. Search titles");
-        System.out.println("5. Search authors");
-        System.out.println("6. Show my borrowed books");
-        System.out.println("7. Return books");
-        System.out.println("8. Return to main menu");
+        System.out.println("2. Borrow a book");
+        System.out.println("3. Search authors");
+        System.out.println("4. Show my borrowed books");
+        System.out.println("5. Return books");
+        System.out.println("6. Return to main menu");
         int select = scanner.nextInt();
         switch (select) {
             case 1:
+                program.showListOfBooks();
+                break;
             case 2:
+                program.borrowBook();
+                break;
             case 3:
+                program.searchForAuthor();
             case 4:
+                program.showMyBorrowedBooks();
             case 5:
+                program.returnBook();
             case 6:
-            case 7:
-            case 8:
                 showMainMenu();
+                break;
         }
 
     }
@@ -79,14 +86,19 @@ public class Menu {
         switch (select) {
             case 1:
                 program.addNewBook();
+                break;
             case 2:
                 program.addNewCustomer();
+                break;
             case 3:
                 program.showAllUsers();
+                break;
             case 4:
                 program.searchForUserName();
+                break;
             case 5:
                 showMainMenu();
+                break;
         }
     }
 

@@ -1,6 +1,7 @@
 package com.nilsedgar;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
@@ -13,6 +14,56 @@ public class Program {
         Menu menu = new Menu();
         menu.showMainMenu();
 
+
+    }
+
+    public void showListOfBooks(){
+        List<Book> books = (List<Book>) FileUtility.loadObject("books.ser");
+        for(Book book: books){
+            System.out.println(book.getTitle() + " " + book.getAuthor() + " " + book.getGenre() + "\n");
+            if(book.getIsAvailable()){
+                System.out.println("This book is available");
+            }
+            else{
+                System.out.println("This book is not available");
+            }
+        }
+    }
+
+    public void borrowBook(){
+        List<Book> books = (List<Book>) FileUtility.loadObject("books.ser");
+        System.out.println("Enter the title of the book you wish to borrow: ");
+        String borrowBook = scanner.nextLine();
+        for(Book book : books){
+            if(book.getTitle().equals(borrowBook) && book.getIsAvailable() == true){
+                book.setIsAvailable(false);
+            }
+            else{
+                System.out.println("Book cannot be found.");
+            }
+        }
+    }
+
+    public void showMyBorrowedBooks(){
+
+    }
+
+    public void returnBook(){
+
+    }
+
+    public void searchForAuthor(){
+        List<Book> books = (List<Book>) FileUtility.loadObject("books.ser");
+        System.out.println("Enter name of author: ");
+        String bookAuthor = scanner.nextLine();
+        for(Book book : books){
+            if(book.getAuthor().equals(bookAuthor)){
+                System.out.println("This author has written: " + book.getTitle());
+            }
+            else{
+                System.out.println("There is no author by that name");
+            }
+        }
 
     }
 

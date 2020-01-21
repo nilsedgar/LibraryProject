@@ -20,7 +20,7 @@ public class Book implements Serializable {
         return isAvailable;
     }
 
-    public void setIsAvailable(){
+    public void setIsAvailable(Boolean isAvailable){
         this.isAvailable = isAvailable;
     }
 
