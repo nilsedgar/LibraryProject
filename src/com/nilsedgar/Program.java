@@ -8,6 +8,7 @@ public class Program {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Book> books = new ArrayList<>();
     ArrayList<User> users = new ArrayList<>();
+    Customer customer;
 
     public Program() {
 
@@ -36,6 +37,7 @@ public class Program {
         String borrowBook = scanner.nextLine();
         for(Book book : books){
             if(book.getTitle().equals(borrowBook) && book.getIsAvailable() == true){
+                customer.borrowedBooks.add(book);
                 book.setIsAvailable(false);
             }
             else{
@@ -45,7 +47,9 @@ public class Program {
     }
 
     public void showMyBorrowedBooks(){
-
+        for(Book book: customer.borrowedBooks){
+            System.out.println(book.getTitle());
+        }
     }
 
     public void returnBook(){
